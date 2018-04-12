@@ -22,3 +22,6 @@
 [submodule "layers/meta-compulab"]
 	path = layers/meta-compulab
 	url = https://github.com/compulab/yocto-compulab-layer
+[submodule "layers/meta-rust"]
+	path = layers/meta-rust
+	url = https://github.com/meta-rust/meta-rust
