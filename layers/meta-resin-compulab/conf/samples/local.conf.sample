@@ -1,11 +1,13 @@
 # Supported machines
 #MACHINE ?= "cl-som-imx7"
 
+BALENA_STORAGE = "overlay2"
+
 # More info meta-resin/README.md
-#RESIN_CONNECTABLE ?= "1"
-#RESIN_CONNECTABLE_ENABLE_SERVICES ?= "0"
-#TARGET_REPOSITORY ?= ""
-#TARGET_TAG ?= ""
+RESIN_CONNECTABLE ?= "1"
+RESIN_CONNECTABLE_ENABLE_SERVICES ?= "1"
+TARGET_REPOSITORY ?= "resin/armv7hf-supervisor"
+TARGET_TAG ?= "v7.4.1"
 
 # Set this to 1 if development image is desired
 #DEVELOPMENT_IMAGE = "1"
@@ -40,9 +42,6 @@ DISTRO ?= "resin-systemd"
 # Remove the old image before the new one is generated to save disk space when RM_OLD_IMAGE is set to 1, this is an easy way to keep the DEPLOY_DIR_IMAGE clean.
 RM_OLD_IMAGE = "1"
 
-# Package Management configuration
-PACKAGE_CLASSES ?= "package_rpm"
-
 # Additional image features
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
 
@@ -63,3 +62,4 @@ CONF_VERSION = "1"
 ACCEPT_FSL_EULA = "1"
 
 BBMASK = ".*/meta-compulab/recipes-browser/"
+HOSTTOOLS += "docker iptables"
